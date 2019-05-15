@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Goblinville Character Spawner</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h2 class="header center orange-text text-darken-2">Goblin Generator</h2>
+      <div class="row center">
+        <h5 class="header col s12 light">For use with the Goblinville RPG</h5>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Job</span>
+          <p>Choose your job or roll for one. Each job has a starting item. Find a place for it in your inventory.</p>
+          <h3 class='displayJob'>_</h3>
+          <p class="displayGear">_</p>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollJob()">Roll your job</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownJob'>Choose your job</a>
+            <ul id='dropdownJob' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Age</span>
+          <p>Choose your age or roll for it.</p>
+          <h3 class='displayAge'>_</h3>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollAge()">Roll your age</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownAge'>Choose your age</a>
+            <ul id='dropdownAge' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Garb</span>
+          <p>Choose or roll your garb. This is a distinctive item of clothing or feature that you are known for. Note it in your inventory.</p>
+          <h3 class='displayGarb'>_</h3>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollGarb()">Roll your garb</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownGarb'>Choose your garb</a>
+            <ul id='dropdownGarb' class='dropdown-content'>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Boss</span>
+          <p>Name your boss and choose (or roll) whether they:</p>
+          <h3 class='displayBoss'>_</h3>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollBoss()">Roll your boss</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownBoss'>Choose your boss</a>
+            <ul id='dropdownBoss' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Experience</span>
+          <p>Come up with one experience from your job that shaped you. Choose the tone of this experience or roll for it:</p>
+          <h4 class='displayXP'>_</h4>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollXP()">Roll experience</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownXP'>Choose experience</a>
+            <ul id='dropdownXP' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Traits</span>
+          <p class="flow-text trait1">_</p>
+          <p class='flow-text trait2'>_</p>
+          <p class='flow-text trait3'>_</p>
+        </div>
+        <div class="card-action">
+          <div class="input-field inline">
+            <input id="traitInput" type="text" class="validate white-text">
+          </div>
+          <a class="waves-effect waves-light btn" onclick="addTrait()">Add Trait</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Name</span>
+          <p>What other goblins call you.</p>
+          <h3 class="displayName">_</h3>
+        </div>
+        <div class="card-action">
+          <div class="input-field inline">
+            <input id="nameInput" type="text" class="validate white-text">
+          </div>
+          <a class="waves-effect waves-light btn" onclick="addName()">Add Name</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Title</span>
+          <p>Your unique reputation in Goblinville.</p>
+          <h3 class="displayTitle">_</h3>
+        </div>
+        <div class="card-action">
+          <div class="input-field inline">
+            <input id="titleInput" type="text" class="validate white-text">
+          </div>
+          <a class="waves-effect waves-light btn" onclick="addTitle()">Add Title</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Outlook</span>
+          <p>How you see the world, what you care about, etc.</p>
+          <h5 class="displayOutlook">_</h5>
+        </div>
+        <div class="card-action">
+          <div class="input-field inline">
+            <input id="outlookInput" type="text" class="validate white-text">
+          </div>
+          <a class="waves-effect waves-light btn" onclick="addOutlook()">Add Outlook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Goal</span>
+          <p>What you hope accomplish this session.</p>
+          <h5 class="displayGoal">_</h5>
+        </div>
+        <div class="card-action">
+          <div class="input-field inline">
+            <input id="goalInput" type="text" class="validate white-text">
+          </div>
+          <a class="waves-effect waves-light btn" onclick="addGoal()">Add Goal</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Weapon</span>
+          <p>Choose or roll for a weapon. Find a place for it in your inventory.</p>
+          <h3 class='displayWeapon'>_</h3>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollWeapon()">Roll your weapon</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownWeapon'>Choose your weapon</a>
+            <ul id='dropdownWeapon' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m6 l4">
+      <div class="card small blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Item</span>
+          <p>Choose or roll for one more thing. Fit it in your inventory.</p>
+          <h3 class='displayItem'>_</h3>
+          <p class='displaySpell'></p>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn" onclick="rollItem()">Roll your itemr</a>
+            <a class='dropdown-trigger btn' href='#' data-target='dropdownItem'>Choose your item</a>
+            <ul id='dropdownItem' class='dropdown-content'></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer blue-grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l9 m9 s12">
+          <h5 class="white-text">About The Game</h5>
+          <p class="grey-text text-lighten-4">Goblinville is a tabletop rpg about broke goblins traveling to dangerous and fantastical places to find treasure and make rent.</p>
+        </div>
+
+        <div class="col l3 m3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.narrativedynamicspress.com/">Website</a></li>
+            <li><a class="white-text" href="https://www.kickstarter.com/projects/michaeldunnoconnor/goblinville-gazette">Kickstarter</a></li>
+            <li><a class="white-text" href="https://narrativedynamics.itch.io/goblinville-core-rules">PDF Storefront</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/mdoc-goblin-generator.js"></script>
+
+  </body>
+</html>
