@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content:space-between;
+}
+
+.container {
+  background-color: rgb(215, 219, 226);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 2em;
+}
+
+img{
+    height: 20em;
+    width: auto;
+}
+
+.page-header, .page-footer{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(123, 164, 229);
+    text-align: center;
+    padding: 1em;
+}
+
+.panel-body{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.panel-heading{
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-center{
+    text-align: center;
+}
+
+h1{
+      font-weight: bold;
+}
