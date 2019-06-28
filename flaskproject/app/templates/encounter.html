@@ -1,0 +1,24 @@
+{% extends "game.html" %}
+
+
+{% block content %}
+{{ super() }}
+          <span class="card-title">Conflict</span>
+          <p>{{ resultA }}</p>
+          <p>{{ resultB }}</p>
+          <p>{{ resultC }}</p>
+          <br>
+          <p>{{ counterA }}</p>
+          <p>{{ counterB }}</p>
+          <p>{{ counterC }}</p>
+        <div class="card-action">
+          <form method="post" action="/resolve">
+            <button class="btn waves-effect waves-light" type="submit" name="actionButton" value="attack">Attack</button>
+            <button class="btn waves-effect waves-light" type="submit" name="actionButton" value="maneuver">Maneuver</button>
+            <button class="btn waves-effect waves-light" type="submit" name="actionButton" value="flee">Flee</button>
+          </form>
+        </div>
+{% endblock %}
+
+
+

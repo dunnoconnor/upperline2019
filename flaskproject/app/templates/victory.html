@@ -1,0 +1,23 @@
+{% extends "game.html" %}
+
+
+{% block content %}
+{{ super() }}
+          <span class="card-title">Victory!</span>
+          <p>{{ resultA }}</p>
+          <p>{{ resultB }}</p>
+          <p>{{ resultC }}</p>
+          <br>
+          <p>{{ name}} is victorious!</p>
+          <br>
+          <p>{{ lootTextA }}</p>
+          <p>{{ lootTextB }}</p>
+        <div class="card-action">
+          <form method="post" action="/crossroads">
+            <button class="btn waves-effect waves-light" type="submit" name="nextButton" value="onward">Onward</button>
+          </form>
+        </div>
+{% endblock %}
+
+
+

@@ -1,11 +1,7 @@
-import time;
 import sys;
 
 pack = True;
-spear = True;
 exhausted = False;
-victory = False;
-dead = False;
 
 def intro():
     print("The Vexillum");
@@ -15,16 +11,15 @@ def intro():
     print(" ")
     input("Press Enter to Begin  ");
     print(" ");
-    time.sleep(2);
     print("You stumble through the thick spring mud, your path lit by a white pinprick of sunlight wheeling across the red-brown scab of twilight.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("Your pack weighs heavy on your back and every step draws your boots into the reeking black earth.");
+    input("...");    
     print(" ");
-    time.sleep(2);
     print("You hear the slurping sound behind you, the low call of the worm eaters.  They will catch you sooner or later.");
     print("Your pack laden with precious saltblocks, and the weight is slowing you down considerably.")
-    time.sleep(2);
+    input("...");
     print(" ");
     checkStart();
 
@@ -49,20 +44,20 @@ def pushOn():
         print("You trudge on, remembering that the Vexillum will need the stolen salt you carry.");
     else:
         print("You move faster without the pack, though the Vexillum will miss the salt it carried.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("Even in summer, the army can't survive on fresh hunt and forage alone.");
     print("Salt helps the army preserve as much as possible while you make your way North.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("You keep walking, for endless red hours until the sky begins to turn pinkish gold.");
     print("Back when the sun still rose and set, they called this dawn.");
-    time.sleep(2);
+    input("...");
     print(" ");
     print("The worm eaters have kept their distance, likely waiting for you to rest.");
     print("You could press on, but there must be other members of your centurae that survived the Frankish attack.");
     print("It would better to travel in force.");
-    time.sleep(2);
+    input("...");
     print(" ");
     checkSearch();
 
@@ -80,11 +75,11 @@ def alone():
     print(" ");
     print("You move quickly through the swamps, your uniform drenched and your legs weary.")
     print("You see the pine forests on the Nothern horizon.  The Vexilllum is camped somewhere within.")
-    time.sleep(2);
+    input("...");
     print(" ")
     print("As you reach the line of dense gray trees, needles brown for lack of light, you see torches dancing in the shadows.");
     print("If these are Franks, they'll kill you on sight.")
-    time.sleep(2);
+    input("...");
     print(" ")
     checkAlone();
     
@@ -103,16 +98,16 @@ def surrender():
     print("You throw your hands to the red sky, and step forward from your hiding place.")
     print("You pray that you will live to see your Vexillum again, those who still march beneath the banner of Rome.")
     print("The riders send a patrol out in to the surrounding marsh, to be sure you are not baiting a trap.")
-    time.sleep(2);
+    input("...");
     print(" ");
     print("If only it were so.  Eventually, a small party approaches.");
     print("You look up, through a haze, at the leader above you.  Not Frankish, it seems.")
     print("He is a huge man, with a curly red beard.  The hair on his head is braided, and glistening with lard.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("He reeks of garlic and elk.  A Burgundian.");
     print("He asks what you would trade for your life.");
-    time.sleep(2);
+    input("...");
     print(" ");
     checkSurrender();
 
@@ -121,19 +116,22 @@ def checkSurrender():
     if pack == False:
         print("Without your pack full of salt, you have nothing to offer.");
         print("They bind your shackles tight.");
+        input("...");
+        print(" ");
         print("They pull you along on a lead, presumably toward the Burgundian camp.");
         print("You wonder if you will ever see the banners of the Vexillum again.")
-        time.sleep(2);
+        input("...");
+        print(" ");
         end();
     else:
         pack = False;
         print("You tear open you pack, showing the blocks of salt within.");
         print("The Burgundians accept your offer and climb back into their saddles.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("They fade into the forest like shadows, leaving you alone in the muddy field.");
         print("You press on alone, giving their company a wide berth.");
-        time.sleep(2);
+        input("...");
         print(' ');
         plains();
         
@@ -143,15 +141,15 @@ def run():
         print("You turn and flee but your heavy pack weighs you down.");
         print("They cut you down within minutes.");
         print("The blood seeps from wide wounds on your back, into the mud below.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("You look up, through a haze, at the leader above you.");
         print("Not Frankish, it seems.  He is a huge man, with a curly red beard.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("The hair on his head is braided, and glistening with lard.");
         print("He reeks of garlic and elk.  A Burgundian.");
-        time.sleep(2);
+        input("...");
         print(" ");
         die();
 
@@ -159,7 +157,8 @@ def run():
         print("You sprint clear across the muddy plains.");
         print("They persue you briefly, but do not follow into the lands of the worm eaters.");
         print("When you come to rest, your bones are weary and your breath ragged.");
-        time.sleep(2);
+        input("...");
+        print(" ");
         plains();
 
 def search():
@@ -170,19 +169,19 @@ def search():
         print("Your pack weighs heavy on your shoulders.")
     print("You search the muddy plains for signs of another lost solider.");
     print("After hours of fruitless searching, you notice something on the horizon.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("The hill south of you is dotted with hunched, hairless figures.");
     print("You see the sunlight glinting off rows of ragged teeth.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("The worm eaters don't eat men, but they take them.  Some say they bury their captives alive.");
     print("Somewhere across the black expanse that was once Northern Italia, the Vexillum is waiting");
     print("You have no choice but to press on.");
-    time.sleep(2);
+    input("...");
     print(" ");
     print("Traveling North through the forests is the more direct route, but you could also march West to the sea.")
-    time.sleep(2);
+    input("...");
     print(" ");
     checkRoute();
     
@@ -200,15 +199,17 @@ def sea():
     print(" ");
     print("You walk for the sea, but hours of walking seem to bring it no closer.");
     print("You see the steaming green waters from afar, and the bleached bones of great fish scatter the shore.");
+    input("...");
+    print(" ");
     print("But you will need to rest before you get there.");
-    time.sleep(2);
+    input("...");
     print(" ");
     print("You find an outcropping of gray stone and take cover beneath it.");
     print("You set yourself down on the moist earth and close your eyes.");
-    time.sleep(2);
+    input("...");
     print(" ");
     print("Sleep comes quickly.");
-    time.sleep(2);
+    input("...");
     sleep();
     
 def plains():
@@ -216,19 +217,19 @@ def plains():
     if exhausted == True:
         print("Near the forest edge, you trip on a stone and collapse into the stinking mud at your feet.");
         print("You are too weak to pull yourself up.");
-        time.sleep(2);
+        input("...");
         print(" ");
         print("Sleep comes quickly.");
-        time.sleep(2);
+        input("...");
         sleep();
     else:
         print("You make it clear to the forest and step into the shade beneath the withered grey pines.");
         print("You stumble along through most of the night before a guard finds you.")
+        input("...");
         print("");
-        time.sleep(2);
         print("She leads you back to the camp, and you can smell the cookfire and hear the far off laughter.");
         print("You made it to the Vexillum encampment.  You are home.")
-        time.sleep(2);
+        input("...");
         print(" ");
         end();
 
@@ -236,14 +237,14 @@ def sleep():
     print(" ")
     print("When you wake you are in a cold, dusty city.");
     print("White stone walls tower over you on all sides.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("Then you hear it, like a rusted iron hinge turning over and over, shaking your skull and bringing tears to your eyes.");
     print("You must still be asleep, and the Maelstrom has found you.");
-    time.sleep(2);
+    input("...");
     print(" ");
     print("You need to regain your senses before it consumes you.");
-    time.sleep(2);
+    input("...");
     print(" ");
     checkSleep();
 
@@ -253,27 +254,29 @@ def checkSleep():
     if sleepPrompt.upper() == 'SCREAM':
         print("You scream and scream until you are weak.");
         print("But eventually you wear yourself out.");
-        print(" ");
-        time.sleep(2);
+        input("...");
+        print(" ");        
         print("It feels as if you were always on your way here, without ever having known it.");
         print("A gaunt man, covered heaad to toe in dust, comes to place a comforting hand upon your shoulder.");
         print("You look up at his face and sees his mouth is sewn shut with thick black wire.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("You awaken.");
+        input("...");
         print(' ');
         awaken();
     elif sleepPrompt.upper() == 'SLAP':
         print("You slap yourself and tear at your hair until you are weak.");
         print("But eventually you wear yourself out.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("It feels as if you were always on your way here, without ever having known it.");
         print("A gaunt man, covered heaad to toe in dust, comes to place a comforting hand upon your shoulder.");
         print("You look up at his face and sees his mouth is sewn shut with thick black wire.");
+        input("...");
         print(" ");
-        time.sleep(2);
         print("You awaken.");
+        input("...");        
         print(' ');
         awaken();
     else:
@@ -282,43 +285,42 @@ def checkSleep():
 def awaken():
     print("You force open your eyes and struggle to reorient yourself.");
     print("But it is too late.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("You are in a shallow grave, pinned down by heavy stones upon your chest.");
     print("The worm eaters have found you in your sleep.");
+    input("...");
     print(" ");
-    time.sleep(2);
     print("They are burying you here.");
     print("Everything goes dark as they finish pouring handfuls of dirt over your face, slurping quietly.");
-    time.sleep(2);
+    input("...");
     print(" ");
     die();
     
 def die():
+    input("...");
     print(" ");
-    time.sleep(2);
     print("Your last thoughts are of your of the Vexillum, those who still march beneath the banner of Rome.");
     print("You should have died among them.");
+    input("...");
     print(" ");
-    print(" ");
-    time.sleep(2);
     print("You died a legionary, Marcus Signus.  The Vexillum lives on.");
+    input("...");
     print(" ");
     end();
 
 def end():
     print("fin");
+    input("...");
     print(" ");
     print(" ");
-    print(" ");
-    time.sleep(2);
     checkReset();
     
 def checkReset():
     print("Do you want to play again?");
     print(" ");
     resetPrompt = input("Type YES or NO.  ");
-    time.sleep(2);
+    print(" ");
     if resetPrompt.upper() == 'YES':
         intro();
     elif resetPrompt.upper() == 'NO':

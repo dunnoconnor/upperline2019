@@ -1,4 +1,3 @@
-<br>
 <h3 align="center">Michael Dunn-O'Connor's Upperline Prework</h3>
 <h4 align="center">2019</h4>
 

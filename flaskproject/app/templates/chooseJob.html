@@ -1,0 +1,22 @@
+{% extends "game.html" %}
+
+
+{% block content %}
+{{ super() }}
+<span class="card-title">Choose your Job</span>
+<ul>
+  <li>Fighters gain Strength when they level and exel in combat.</li>
+  <li>Thieves gain Speed when they level and exel at sneaking.</li>
+  <li>Wizards gains spells when they level.  Use a spell when resting to gain a permanent bonus.</li>
+</ul>
+<div class="card-action">
+    <form name="chooseJob" action="/sendJob" method='POST'>
+      <button class="btn waves-effect waves-light" type="submit" name="jobButton" value="fighter">Fighter</button>
+      <button class="btn waves-effect waves-light" type="submit" name="jobButton" value="thief">Thief</button>
+      <button class="btn waves-effect waves-light" type="submit" name="jobButton" value="wizard">Wizard</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
